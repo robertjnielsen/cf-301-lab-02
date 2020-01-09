@@ -57,19 +57,28 @@ Image.prototype.render = function() {
 function displayImage() {
   $('section').hide();
   selectedImages = [];
+  currentImage = 0;
   let selectedOption = $(this).val();
   selectedImages.push($(`.${selectedOption}`));
   $(selectedImages[0][currentImage]).show();
 }
 
 function prevImage() {
-  currentImage--;
+  if (currentImage === 0) {
+    currentImage = selectedImages[0].length - 1;
+  } else {
+    currentImage--;
+  }
   $('section').hide();
   $(selectedImages[0][currentImage]).show();
 }
 
 function nextImage() {
-  currentImage++;
+  if (currentImage === selectedImages[0].length - 1) {
+    currentImage = 0;
+  } else {
+    currentImage++;
+  }
   $('section').hide();
   $(selectedImages[0][currentImage]).show();
 }
