@@ -18,7 +18,7 @@
 
 #### Feature #3: Style The Application
 
-- Estimated time to complete:
+- Estimated time to complete: ~ 30 minutes.
 - Start time: 10:30 AM
-- Finish time:
-- Actual time needed to complete:
+- Finish time: 10: 54
+- Actual time needed to complete: 24 minutes.
