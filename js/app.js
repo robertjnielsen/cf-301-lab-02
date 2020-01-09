@@ -5,6 +5,12 @@ const allImages = [];
 // Create array to hold object keywords for <select> element.
 const allOptions = [];
 
+// Create array to hold all Images matching user selection.
+let selectedImages = [];
+
+// Create counter for displayed Image(s).
+let currentImage = 0;
+
 // Define Image constructor function.
 function Image(newImg) {
   this.imageUrl = newImg.image_url;
@@ -50,14 +56,26 @@ Image.prototype.render = function() {
 // by the user.
 function displayImage() {
   $('section').hide();
+  selectedImages = [];
   let selectedOption = $(this).val();
-  $(`.${selectedOption}`).show();
+  selectedImages.push($(`.${selectedOption}`));
+  $(selectedImages[0][currentImage]).show();
+}
+
+function prevImage() {
+  currentImage--;
+  $('section').hide();
+  $(selectedImages[0][currentImage]).show();
+}
+
+function nextImage() {
+  currentImage++;
+  $('section').hide();
+  $(selectedImages[0][currentImage]).show();
 }
 
 // Do things with jQuery once the DOM finishes loading.
 $(document).ready(() => {
-  $('section:first-child').hide();
-
   // eslint-disable-next-line comma-dangle
   $.ajax('./data/page-1.json', { method: 'GET', dataType: 'JSON' }).then(
     data => {
@@ -68,6 +86,20 @@ $(document).ready(() => {
       });
     }
   );
+  // eslint-disable-next-line comma-dangle
+  $.ajax('./data/page-2.json', { method: 'GET', dataType: 'JSON' }).then(
+    data => {
+      data.forEach(img => {
+        let newImage = new Image(img);
+        newImage.newOption();
+        newImage.render();
+      });
+    }
+  );
+
+  $('section').hide();
 
   $('select').on('change', displayImage);
+  $('#image-next').on('click', nextImage);
+  $('#image-prev').on('click', prevImage);
 });

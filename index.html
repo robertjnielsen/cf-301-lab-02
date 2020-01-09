@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/modules.css" />
     <link rel="stylesheet" href="css/theme.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script>
+      var template = Handlebars.compile(
+        '<section>',
+        '<h2>{{title}}</h2>',
+        '<img src="{{imageURL}}" alt="{{keyword}}" />',
+        '<p>{{description}}</p>',
+        '</section>'
+      );
+    </script>
     <title>The Gallery of Horns</title>
   </head>
   <body>
@@ -22,6 +32,10 @@
         <img src="" alt="" />
         <p></p>
       </section>
+      <div class="pageBtns">
+        <div id="image-prev" class="imgChange">Prev</div>
+        <div id="image-next" class="imgChange">Next</div>
+      </div>
     </main>
     <footer>
       &copy; 2018 Code Fellows
