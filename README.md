@@ -19,6 +19,6 @@
 #### Feature #3: Style The Application
 
 - Estimated time to complete:
-- Start time:
+- Start time: 10:30 AM
 - Finish time:
 - Actual time needed to complete:

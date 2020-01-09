@@ -15,6 +15,8 @@ function Image(newImg) {
   allImages.push(this);
 }
 
+// Define Image method to generate new unique <option> elements to match Image
+// instance keyword values.
 Image.prototype.newOption = function() {
   const selectEl = $('#select');
   if (!allOptions.includes(this.keyword)) {
@@ -23,6 +25,7 @@ Image.prototype.newOption = function() {
   }
 };
 
+// Define Image method to render Image instance <section> elements to page.
 Image.prototype.render = function() {
   // Grab html template used to render Image objects to page.
   const photoTemplate = $('#photo-template').html();
@@ -43,14 +46,18 @@ Image.prototype.render = function() {
   $('main').append($newSection);
 };
 
+// Define function to display Image instance <section> elements as chosen
+// by the user.
 function displayImage() {
   $('section').hide();
   let selectedOption = $(this).val();
   $(`.${selectedOption}`).show();
 }
 
+// Do things with jQuery once the DOM finishes loading.
 $(document).ready(() => {
-  // Grab data from a local file and run through Image constructor.
+  $('section:first-child').hide();
+
   // eslint-disable-next-line comma-dangle
   $.ajax('./data/page-1.json', { method: 'GET', dataType: 'JSON' }).then(
     data => {
