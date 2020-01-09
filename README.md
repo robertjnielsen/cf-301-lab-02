@@ -1,6 +1,8 @@
-# Code Fellows 301 - Lab 02: jQuery Selectors & Events
+# Code Fellows 301 - Lab 02 & Lab 03
 
-## Time Estimate
+## Lab 02: jQuery Selectors & Events
+
+### Time Estimate
 
 #### Feature #1: Display Images
 
@@ -22,3 +24,35 @@
 - Start time: 10:30 AM
 - Finish time: 10: 54
 - Actual time needed to complete: 24 minutes.
+
+## Lab 03: Flexbox & Templating
+
+### Time Estimate
+
+#### Feature #1: Pagination
+
+- Estimated time to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
+
+#### Feature #2: Templating
+
+- Estimated time to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
+
+#### Feature #3: Styling With Flexbox
+
+- Estimated time to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
+
+#### Feature #4: Sort The Images
+
+- Estimated time to complete:
+- Start time:
+- Finish time:
+- Actual time needed to complete:
