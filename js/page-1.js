@@ -1,7 +1,7 @@
 'use strict';
 
 /**********************************/
-/* Data related to Dropdown Menu. */
+/* Data related to Filter Menu. */
 /**********************************/
 
 // Declare array to hold all UNIQUE options.
@@ -30,7 +30,6 @@ function filterHorns() {
   $('#filter-horns').on('change', function() {
     $('div').hide();
     let selectedHorn = $(this).val();
-    console.log(selectedHorn);
     allHornsOne.forEach(horn => {
       if (selectedHorn === horn.keyword) {
         $('#horns-template-embed').append(horn.renderHorns());
@@ -38,6 +37,52 @@ function filterHorns() {
         $('#horns-template-embed').append(horn.renderHorns());
       }
     });
+  });
+}
+
+/******************************/
+/* Data related to Sort Menu. */
+/******************************/
+
+// Declare function to sort Horn instances by title.
+function sortHornsByTitle() {
+  allHornsOne.sort(function(a, b) {
+    if (a.title.toLowerCase() < b.title.toLowerCase()) {
+      return -1;
+    } else if (a.title.toLowerCase() > b.title.toLowerCase()) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  allHornsOne.forEach(horn => horn.renderHorns());
+}
+
+// Declare function to sort Horn instances by horns.
+function sortHornsByHorns() {
+  allHornsOne.sort(function(a, b) {
+    if (a.horns < b.horns) {
+      return -1;
+    } else if (a.horns > b.horns) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  allHornsOne.forEach(horn => horn.renderHorns());
+}
+
+// Declare function to sort Horn instances.
+function sortHorns() {
+  $('#sort-horns').on('change', function() {
+    $('div').hide();
+    let sortedHorns = $(this).val();
+    console.log(sortedHorns);
+    if (sortedHorns === 'title') {
+      sortHornsByTitle();
+    } else if (sortedHorns === 'horns') {
+      sortHornsByHorns();
+    }
   });
 }
 
@@ -65,4 +110,5 @@ $(document).ready(() => {
     renderOptions();
   });
   filterHorns();
+  sortHorns();
 });
