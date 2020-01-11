@@ -4,6 +4,11 @@ body {
   text-align: center;
 }
 
+main {
+  width: 100%;
+  margin: auto;
+}
+
 .imgChange {
   display: inline;
   padding: 1rem 1.5rem;
@@ -19,14 +24,27 @@ body {
   background-color: #333;
 }
 
-section {
+.horn-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  margin: 2rem auto;
+}
+
+.horn-section div {
   width: 80%;
   margin: 2rem auto;
 }
 
 img {
   width: 100%;
-  height: 100%;
   border: 1px solid black;
   border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .horn-section div {
+    width: 30%;
+  }
 }
