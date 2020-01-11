@@ -31,24 +31,24 @@
 
 #### Feature #1: Pagination
 
-- Estimated time to complete:
-- Start time:
-- Finish time:
-- Actual time needed to complete:
+- Estimated time to complete: ~ 1 hour
+- Start time: 0810
+- Finish time: 0855
+- Actual time needed to complete: 45 minutes
 
 #### Feature #2: Templating
 
-- Estimated time to complete:
-- Start time:
-- Finish time:
-- Actual time needed to complete:
+- Estimated time to complete: ~ 30 minutes
+- Start time: 0900
+- Finish time: 0920
+- Actual time needed to complete: 20 minutes
 
 #### Feature #3: Styling With Flexbox
 
-- Estimated time to complete:
-- Start time:
-- Finish time:
-- Actual time needed to complete:
+- Estimated time to complete: ~ 30 minutes
+- Start time: 0920
+- Finish time: 0955
+- Actual time needed to complete: 35 minutes
 
 #### Feature #4: Sort The Images
 
